@@ -1,4 +1,3 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,50 +5,53 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Arial", sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Light gray background */
-    color: #333; /* Dark text color for readability */
+    background-color: #f9f9f9;
+    color: #333;
+   
 }
 
-/* Header Styles */
 header {
-    background-color: #af774c;
+    background-color: #8b5e34;
     color: white;
     text-align: center;
     padding: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation Bar */
+
+nav {
+    background-color: #333;
+    padding: 0; 
+    margin: 0;
+}
+
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    background-color: #333;
-    margin-top: 20px;
-}
-
-nav ul li {
-    margin: 0 10px;
+    gap: 15px;
+    padding: 10px 0; 
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
+    border-radius: 5px;
 }
 
-nav ul li a:hover {
-    background-color: #ddd;
-    color: black;
-}
 
-/* Main Content */
 section {
     padding: 20px;
-    margin: 20px;
+    margin: 20px auto;
     background-color: white;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
 }
 
 ul {
@@ -64,17 +66,47 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     text-align: left;
 }
 
-/* Layout using Flexbox for main sections */
+th {
+    background-color: #555;
+    color: white;
+}
+
 main {
     display: flex;
-    justify-content: space-between;
-    margin: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.details {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.details-content {
+    display: none;
+    padding: 10px;
+    border-left: 3px solid #8b5e34;
+    margin-top: 5px;
+}
+
+.seo-tech {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
 }
