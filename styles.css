@@ -131,3 +131,94 @@ section ul list-style: hover; {
     color: #8b5e34;
     text-decoration: underline;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+form label {
+    font-weight: bold;
+}
+form input[type="text"],
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+input[type="submit"] {
+    background-color: #8b5e34;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #6f4c3e;
+    transition: background-color 0.3s ease;
+}   
+input[type="Restart"]:active {
+    background-color: #5a3e2c;
+    transition: background-color 0.1s ease;
+}
+input[type="submit"]:active {
+    background-color: #6f4c3e;
+    transition: background-color 0.1s ease;
+}
+input[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+restart {
+    background-color: #8b5e34;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+restart:hover {
+    background-color: #6f4c3e;
+    transition: background-color 0.3s ease;
+}
+restart:active {
+    background-color: #5a3e2c;
+    transition: background-color 0.1s ease;
+}
+.restart {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+.restart p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.restart button {
+    background-color: #8b5e34;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.restart button:hover {
+    background-color: #6f4c3e;
+    transition: background-color 0.3s ease;
+}
+.restart button:active {
+    background-color: #5a3e2c;
+    transition: background-color 0.1s ease;
+}
+.restart button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.restart button:disabled:hover {
+    background-color: #ccc;
+}
+.restart button:disabled:active {
+    background-color: #ccc;
+}
