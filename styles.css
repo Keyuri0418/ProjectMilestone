@@ -110,3 +110,24 @@ main {
     display: block;
     margin: 10px auto;
 }
+nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+}
+nav ul li a:hover {
+    background-color: #555;
+    transition: background-color 0.3s ease;
+}
+section ul li a {
+    color: #8b5e34;
+    text-decoration: none;
+}
+section ul li a:hover {
+    text-decoration: underline;
+}
+section ul list-style: hover; {
+    color: #8b5e34;
+    text-decoration: underline;
+}
