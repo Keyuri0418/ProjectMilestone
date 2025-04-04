@@ -212,5 +212,7 @@ form {
     max-width: 900px;
     text-align: left side;
 }
-
+div {
+    text-align: center;
+}
 
