@@ -214,39 +214,6 @@ section ul list-style: hover; {
     background-color: #fff;
     border-radius: 10px;
 }
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 20px auto;
-    max-width: 600px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    line-height: 1.5;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 1200px;
-    padding: 20px;
-    background-color: #fff;
-}
+
 
 
