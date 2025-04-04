@@ -182,11 +182,17 @@ section ul list-style: hover; {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
     transition: transform 0.3s ease;
-    box-align: under question; 
     text-align: justify;
     line-height: 1.5;
     background-color: #f9f9f9;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
+.quiz-options input[type="radio"],
+.quiz-options input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
 #submit-btn {
     display: block;
     width: 100%;
