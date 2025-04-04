@@ -17,7 +17,7 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -182,8 +182,11 @@ section ul list-style: hover; {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transform: scale(1.02);
     transition: transform 0.3s ease;
+    box-align: justify;
     text-align: justify;
-}
+    line-height: 1.5;
+    background-color: #f9f9f9;
+    border-radius: 10px;}
 #submit-btn {
     display: block;
     width: 100%;
@@ -207,6 +210,15 @@ section ul list-style: hover; {
     font-weight: bold;
     color: #28a745;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
 }
 form {
     display: flex;
