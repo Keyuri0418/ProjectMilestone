@@ -152,6 +152,7 @@ section ul list-style: hover; {
     max-width: 1200px;
     padding: 20px;
     background-color: #fff;
+    text-align: left side;
 }
 .quiz-options {
     list-style: none;
