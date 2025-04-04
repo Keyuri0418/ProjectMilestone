@@ -4,11 +4,11 @@ function submitQuiz() {
 
     // Correct answers
     let answers = {
-        q1: "a",
-        q2: "b",
-        q3: "c",
-        q4: "On-page",
-        q5: ["a", "c", "d"]
+        q1: "A",
+        q2: "B",
+        q3: "C",
+        q4: "on-page",
+        q5: ["A", "C", "D"]
     };
 
     // Check single-choice answers
