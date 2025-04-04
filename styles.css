@@ -199,18 +199,9 @@ section ul list-style: hover; {
 .result {
     margin-top: 15px;
     font-size: 18px;
-    font-weight: bold;
-    color: #28a745;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    background: #f9f9f9;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 1200px;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
+    margin: 20px auto;
+    text-align: center;
 }
 form {
     padding: 20px;
