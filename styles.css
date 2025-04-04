@@ -99,7 +99,7 @@ main {
 .details-content {
     display: none;
     padding: 10px;
-    border-left: 3px solid #67cef3;
+    border-left: 3px solid #4399f6;
     margin-top: 5px;
 }
 
@@ -116,7 +116,7 @@ nav ul li a {
     color: white;
 }
 nav ul li a:hover {
-    background-color: #3ea1e8;
+    background-color: #69b0f6;
     transition: background-color 0.3s ease;
 }
 section ul li a {
@@ -148,6 +148,11 @@ section ul list-style: hover; {
     list-style: none;
     padding: 0;
     font-size: 18px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;  
+    text-align: justify;
 }
 .quiz-options li {
     background: #fff;
@@ -157,6 +162,7 @@ section ul list-style: hover; {
     cursor: pointer;
     transition: background 0.3s ease;
     border: 1px solid #ddd;
+    text-align: justify;
 }
 .quiz-options li:hover {
     background: #2976e1;
