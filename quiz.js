@@ -11,11 +11,11 @@ function submitQuiz() {
         q5: ["a", "c", "d"]
     };
 
-    // Check single-choice answers
-    //if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) score++;
-    //if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) score++;
-    //if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) score++;
-// Question 1 - Single choice
+    // Check single-choice answers old
+    if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) score++;
+    if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) score++;
+    if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) score++;
+// Question 1 - Single choice new
   const q1 = document.querySelector('input[name="q1"]:checked');
   const q1Feedback = document.querySelector("#q1 .feedback");
   if (q1) {
@@ -53,11 +53,11 @@ function submitQuiz() {
     q2Feedback.style.color = "orange";
   }
 
-  // Final Result
+  // Final Result old
   //const result = document.getElementById("result");
   //result.innerHTML = `Score: ${score}/${total}<br>` +
                      //(score >= 1.5 ? "<strong>Result: Pass ✅</strong>" : "<strong>Result: Fail ❌</strong>");
-// Final Result
+// Final Result new
   const result = document.getElementById("result");
   result.innerHTML = `Score: ${score}/${total}<br>` +
                      (score >= 1.5 ? "<strong>Result: Pass ✅</strong>" : "<strong>Result: Fail ❌</strong>");
@@ -81,11 +81,11 @@ function submitQuiz() {
     document.getElementById("result").innerHTML = resultText;
 }
 
-// Restart quiz function
-//function restartQuiz() {
-  //  document.getElementById("quizForm").reset();
-    //document.getElementById("result").innerHTML = "";
-// Restart Button Logic
+// Restart quiz function old
+function restartQuiz() {
+  document.getElementById("quizForm").reset();
+    document.getElementById("result").innerHTML = "";
+// Restart Button Logic new
 document.getElementById("restart-btn").addEventListener("click", function () {
   const inputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
   inputs.forEach(input => input.checked = false);
