@@ -1,109 +1,39 @@
 function submitQuiz() {
     let score = 0;
     let totalQuestions = 5;
-  
-let answers = {
+
+    // Correct answers
+    let answers = {
         q1: "A",
         q2: "B",
         q3: "C",
-        q4: "on page",
+        q4: "on-page",
         q5: ["A", "C", "D"]
     };
-document.addEventListener("DOMContentLoaded", function () {
-  const submitBtn = document.getElementById("submit-btn");
-  const restartBtn = document.getElementById("restart-btn");
-  const resultBox = document.getElementById("result");
 
-  submitBtn.addEventListener("click", function () {
-    let score = 0;
-    let total = 5;
+    // Check single-choice answers
+    if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) score++;
+    if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) score++;
+    if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) score++;
 
-    // === Question 1: Single-choice ===
-    const q1 = document.querySelector('input[name="q1"]:checked');
-    const q1Feedback = document.querySelector("#q1 .feedback");
-    if (q1 && q1.value === "A") {
-      score++;
-      q1Feedback.textContent = "Correct!";
-      q1Feedback.style.color = "green";
-    } else {
-      q1Feedback.textContent = "Incorrect. Correct answer: A. Search Engine Optimization";
-      q1Feedback.style.color = "red";
-    }
+    // Check fill-in-the-blank (case insensitive)
+    let q4Answer = document.getElementById("q4").value.trim().toLowerCase();
+    if (q4Answer === answers.q4) score++;
 
-    // === Question 2: Multi-choice ===
-    const q2Inputs = document.querySelector('input[name="q2"]:checked');
-    const q2Values = Array.from(q2Inputs).map(i => i.value);
-    const q2Feedback = document.querySelector("#q2 .feedback");
-    const correctAnswersQ2 = ["B"];
-    const isCorrectQ2 = correctAnswersQ2.every(val => q2Values.includes(val)) && q2Values.length === correctAnswersQ2.length;
+    // Check multiple-choice
+    let selectedOptions = [...document.querySelectorAll('input[name="q5"]:checked')].map(el => el.value);
+    if (JSON.stringify(selectedOptions.sort()) === JSON.stringify(answers.q5.sort())) score++;
 
-        if (q2Values.length > 0 && isCorrectQ2) {
-          score++;
-          q2Feedback.textContent = "Correct!";
-          q2Feedback.style.color = "green";
-        } else {
-          q2Feedback.textContent = "Incorrect. Correct answers: B.";
-          q2Feedback.style.color = "red";
-        }
-const q3 = document.querySelector('input[name="q3"]:checked');
-const q3Value = Arry.from(q3).find(input => input.checked).value;
-const q3Feedback = document.createElement('p');
-q3Feedback.textContent = q3Value === 'C' ? 'Correct!' : 'Incorrect. The correct answer is C. Site speed and mobile-friendliness.';
- 
-if (q3Values.length > 0 && isCorrectQ3) {
-    score++;
-    q3Feedback.textContent = "Correct!";
-    q3Feedback.style.color = "green";
-  } else {
-    q3Feedback.textContent = "Incorrect. Correct answers: C.";
-    q3Feedback.style.color = "red";
-  }
-const q4 = document.getElementById('q4').value;   
-const q4Feedback = document.createElement('p');
-q4Feedback.textContent = q4 === 'on page' ? 'Correct!' : 'Incorrect. The correct answer is on page.';
-if (q4 === 'on page') {
-    score++;
-    q4Feedback.textContent = "Correct!";
-    q4Feedback.style.color = "green";
-  } else {
-    q4Feedback.textContent = "Incorrect. Correct answer: on page.";
-    q4Feedback.style.color = "red";
-  }
+    // Display results
+    let resultText = `<p>Your Score: ${score}/${totalQuestions}</p>`;
+    resultText += score >= 3 ? "<p>✅ You Passed!</p>" : "<p>❌ You Failed. Try Again!</p>";
+    
+    document.getElementById("result").innerHTML = resultText;
+}
 
-const q5 = document.querySelectorAll('input[name="q5"]:checked');
-const q5Values = Array.from(q5).map(input => input.value);
-const q5Feedback = document.createElement('p');
-q5Feedback.textContent = q5Values.includes('A') && q5Values.includes('C') && q5Values.includes('D') ? 'Correct!' : 'Incorrect. The correct answers are A, C, and D.';
-if (q5Values.length > 0 && q5Values.includes('A') && q5Values.includes('C') && q5Values.includes('D')) {
-    score++;
-    q5Feedback.textContent = "Correct!";
-    q5Feedback.style.color = "green";
-  } else {
-    q5Feedback.textContent = "Incorrect. Correct answers: A, C, and D.";
-    q5Feedback.style.color = "red";
-  }
-    // === Show result ===
-    resultBox.innerHTML = `Score: ${score}/${total}<br>` +
-      (score >= 1.5 ? "<strong>Result: Pass ✅</strong>" : "<strong>Result: Fail ❌</strong>");
-
-    restartBtn.style.display = "inline-block";
-  });
-
-  // === Restart Quiz ===
-  restartBtn.addEventListener("click", function () {
-    // Reset inputs
-    document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => input.checked = false);
-
-    // Reset feedback
-    document.querySelectorAll(".feedback").forEach(p => {
-      p.textContent = "";
-      p.style.color = "";
-    });
-
-    // Reset result
-    resultBox.textContent = "";
-    restartBtn.style.display = "none";
-
-  });
-});
+// Restart quiz function
+function restartQuiz() {
+    document.getElementById("quizForm").reset();
+    document.getElementById("result").innerHTML = "";
+}
 
