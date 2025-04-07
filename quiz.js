@@ -12,9 +12,9 @@ function submitQuiz() {
     };
 
     // Check single-choice answers old
-    if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) score++;
-    if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) score++;
-    if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) score++;
+    //if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) score++;
+    //if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) score++;
+    //if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) score++;
 // Question 1 - Single choice new
   const q1 = document.querySelector('input[name="q1"]:checked');
   const q1Feedback = document.querySelector("#q1 .feedback");
@@ -82,9 +82,9 @@ function submitQuiz() {
 }
 
 // Restart quiz function old
-function restartQuiz() {
-  document.getElementById("quizForm").reset();
-    document.getElementById("result").innerHTML = "";
+//function restartQuiz() {
+  //document.getElementById("quizForm").reset();
+    //document.getElementById("result").innerHTML = "";
 // Restart Button Logic new
 document.getElementById("restart-btn").addEventListener("click", function () {
   const inputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
