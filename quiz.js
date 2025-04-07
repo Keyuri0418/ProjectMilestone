@@ -3,11 +3,11 @@ function submitQuiz() {
     let totalQuestions = 5;
   
 let answers = {
-        q1: "a",
-        q2: "b",
-        q3: "c",
+        q1: "A",
+        q2: "B",
+        q3: "C",
         q4: "on page",
-        q5: ["a", "c", "d"]
+        q5: ["A", "C", "D"]
     };
 document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = document.getElementById("submit-btn");
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const q3 = document.querySelector('input[name="q3"]:checked');
 const q3Value = Arry.from(q3).find(input => input.checked).value;
 const q3Feedback = document.createElement('p');
-q3Feedback.textContent = q3Value === 'c' ? 'Correct!' : 'Incorrect. The correct answer is C. Site speed and mobile-friendliness.';
+q3Feedback.textContent = q3Value === 'C' ? 'Correct!' : 'Incorrect. The correct answer is C. Site speed and mobile-friendliness.';
  
 if (q3Values.length > 0 && isCorrectQ3) {
     score++;
@@ -73,8 +73,8 @@ if (q4 === 'on page') {
 const q5 = document.querySelectorAll('input[name="q5"]:checked');
 const q5Values = Array.from(q5).map(input => input.value);
 const q5Feedback = document.createElement('p');
-q5Feedback.textContent = q5Values.includes('a') && q5Values.includes('c') && q5Values.includes('d') ? 'Correct!' : 'Incorrect. The correct answers are A, C, and D.';
-if (q5Values.length > 0 && q5Values.includes('a') && q5Values.includes('c') && q5Values.includes('d')) {
+q5Feedback.textContent = q5Values.includes('A') && q5Values.includes('C') && q5Values.includes('D') ? 'Correct!' : 'Incorrect. The correct answers are A, C, and D.';
+if (q5Values.length > 0 && q5Values.includes('A') && q5Values.includes('C') && q5Values.includes('D')) {
     score++;
     q5Feedback.textContent = "Correct!";
     q5Feedback.style.color = "green";
@@ -104,7 +104,6 @@ if (q5Values.length > 0 && q5Values.includes('a') && q5Values.includes('c') && q
     resultBox.textContent = "";
     restartBtn.style.display = "none";
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 });
 
