@@ -7,7 +7,7 @@ function submitQuiz() {
         q1: "a",
         q2: "b",
         q3: "c",
-        q4: "On-page",
+        q4: "on page",
         q5: ["a", "c", "d"]
     };
 
