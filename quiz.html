@@ -21,7 +21,25 @@
             <li><a href="quiz.html">Self-Assessment Quiz</a></li>
         </ul>
     </nav>
-<div class="quiz-container" id="quiz">
+  <header>
+        <h1>Self-Assessment Quiz</h1>
+        <p>Test your knowledge of SEO concepts and strategies with this self-assessment quiz.</p>
+    </header>
+    <section>
+        <h2>Quiz Overview</h2>
+        <p>Please answer the following questions to the best of your ability. Select the correct answer for each question.</p>
+        <p>After completing the quiz, click "Submit" to see your results.</p>
+        <p>Each question has multiple choice answers. Select the correct answer(s) for each question.</p>
+        <p>Note: Some questions may have more than one correct answer.</p>
+        <p>The quiz consists of the following types of questions:</p>
+        <ul>
+            <li>Single choice (select one answer)</li>
+            <li>Fill in the blank (type your answer)</li>
+            <li>Multiple correct answers (select all that apply)</li>
+        </ul>
+    </section> 
+    <form id="quizForm">
+  <div class="quiz-container" id="quiz">
   <!-- Question 1 -->
   <div class="question-block" id="q1">
     <p class="question">1. What does SEO stand for?</p>
@@ -60,7 +78,7 @@
   <p class="result" id="result"></p>
   <button id="restart-btn">Restart Quiz</button>
 </div>
-
+</form>
 <script>
 document.getElementById("submit-btn").addEventListener("click", function () {
   let score = 0;
