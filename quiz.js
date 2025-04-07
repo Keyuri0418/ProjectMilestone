@@ -46,16 +46,4 @@ document.getElementById("submit-btn").addEventListener("click", function () {
     document.getElementById("restart-btn").style.display = "inline-block";
 });
 
-document.getElementById("restart-btn").addEventListener("click", function () {
-    // Reset all radio and checkbox inputs
-    const inputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"], input[type="text"]');
-    inputs.forEach(input => input.checked = false || (input.value = ""));
-
-    // Hide result and restart button again
-    document.getElementById("result").textContent = "";
-    document.getElementById("restart-btn").style.display = "none";
-
-    // Optionally scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
 
