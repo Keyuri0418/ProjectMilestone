@@ -1,3 +1,14 @@
+function submitQuiz() {
+    let score = 0;
+    let totalQuestions = 5;
+  
+let answers = {
+        q1: "a",
+        q2: "b",
+        q3: "c",
+        q4: "on page",
+        q5: ["a", "c", "d"]
+    };
 document.addEventListener("DOMContentLoaded", function () {
   const submitBtn = document.getElementById("submit-btn");
   const restartBtn = document.getElementById("restart-btn");
