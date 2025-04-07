@@ -36,14 +36,3 @@ function restartQuiz() {
     document.getElementById("quizForm").reset();
     document.getElementById("result").innerHTML = "";
 }
-document.getElementById("submit-btn").addEventListener("click", function () {
-    // Sample logic for calculating score goes here...
-
-    // Show result (replace with your actual logic)
-    document.getElementById("result").textContent = "You scored 4/5. Pass!";
-    
-    // Show restart button
-    document.getElementById("restart-btn").style.display = "inline-block";
-});
-
-
