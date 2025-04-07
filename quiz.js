@@ -1,25 +1,16 @@
-function submitQuiz() {
+document.addEventListener("DOMContentLoaded", function () {
+  const submitBtn = document.getElementById("submit-btn");
+  const restartBtn = document.getElementById("restart-btn");
+  const resultBox = document.getElementById("result");
+
+  submitBtn.addEventListener("click", function () {
     let score = 0;
-    let totalQuestions = 5;
+    let total = 2;
 
-    // Correct answers
-    let answers = {
-        q1: "a",
-        q2: "b",
-        q3: "c",
-        q4: "on page",
-        q5: ["a", "c", "d"]
-    };
-
-    // Check single-choice answers old
-    //if (document.querySelector('input[name="q1"]:checked')?.value === answers.q1) score++;
-    //if (document.querySelector('input[name="q2"]:checked')?.value === answers.q2) score++;
-    //if (document.querySelector('input[name="q3"]:checked')?.value === answers.q3) score++;
-// Question 1 - Single choice new
-  const q1 = document.querySelector('input[name="q1"]:checked');
-  const q1Feedback = document.querySelector("#q1 .feedback");
-  if (q1) {
-    if (q1.value === "A") {
+    // === Question 1: Single-choice ===
+    const q1 = document.querySelector('input[name="q1"]:checked');
+    const q1Feedback = document.querySelector("#q1 .feedback");
+    if (q1 && q1.value === "A") {
       score++;
       q1Feedback.textContent = "Correct!";
       q1Feedback.style.color = "green";
@@ -27,20 +18,15 @@ function submitQuiz() {
       q1Feedback.textContent = "Incorrect. Correct answer: A. Search Engine Optimization";
       q1Feedback.style.color = "red";
     }
-  } else {
-    q1Feedback.textContent = "You didn’t answer this one.";
-    q1Feedback.style.color = "orange";
-  }
 
-  // Question 2 - Multi-choice
-  const q2Inputs = document.querySelectorAll('input[name="q2"]:checked');
-  const q2Values = Array.from(q2Inputs).map(i => i.value);
-  const q2Feedback = document.querySelector("#q2 .feedback");
-  const correctAnswersQ2 = ["A", "B"];
+    // === Question 2: Multi-choice ===
+    const q2Inputs = document.querySelectorAll('input[name="q2"]:checked');
+    const q2Values = Array.from(q2Inputs).map(i => i.value);
+    const q2Feedback = document.querySelector("#q2 .feedback");
+    const correctAnswersQ2 = ["A", "B"];
+    const isCorrectQ2 = correctAnswersQ2.every(val => q2Values.includes(val)) && q2Values.length === correctAnswersQ2.length;
 
-  if (q2Values.length > 0) {
-    const isCorrect = correctAnswersQ2.every(val => q2Values.includes(val)) && q2Values.length === correctAnswersQ2.length;
-    if (isCorrect) {
+    if (q2Values.length > 0 && isCorrectQ2) {
       score++;
       q2Feedback.textContent = "Correct!";
       q2Feedback.style.color = "green";
@@ -48,56 +34,30 @@ function submitQuiz() {
       q2Feedback.textContent = "Incorrect. Correct answers: A and B.";
       q2Feedback.style.color = "red";
     }
-  } else {
-    q2Feedback.textContent = "You didn’t answer this one.";
-    q2Feedback.style.color = "orange";
-  }
 
-  // Final Result old
-  //const result = document.getElementById("result");
-  //result.innerHTML = `Score: ${score}/${total}<br>` +
-                     //(score >= 1.5 ? "<strong>Result: Pass ✅</strong>" : "<strong>Result: Fail ❌</strong>");
-// Final Result new
-  const result = document.getElementById("result");
-  result.innerHTML = `Score: ${score}/${total}<br>` +
-                     (score >= 1.5 ? "<strong>Result: Pass ✅</strong>" : "<strong>Result: Fail ❌</strong>");
-  // Show Restart Button
-  //document.getElementById("restart-btn").style.display = "inline-block";
-    // Show Restart Button
-  document.getElementById("restart-btn").style.display = "inline-block";
-});
-    // Check fill-in-the-blank (case insensitive)
-    let q4Answer = document.getElementById("q4").value.trim().toLowerCase();
-    if (q4Answer === answers.q4) score++;
+    // === Show result ===
+    resultBox.innerHTML = `Score: ${score}/${total}<br>` +
+      (score >= 1.5 ? "<strong>Result: Pass ✅</strong>" : "<strong>Result: Fail ❌</strong>");
 
-    // Check multiple-choice
-    let selectedOptions = [...document.querySelectorAll('input[name="q5"]:checked')].map(el => el.value);
-    if (JSON.stringify(selectedOptions.sort()) === JSON.stringify(answers.q5.sort())) score++;
-
-    // Display results
-    let resultText = `<p>Your Score: ${score}/${totalQuestions}</p>`;
-    resultText += score >= 3 ? "<p>✅ You Passed!</p>" : "<p>❌ You Failed. Try Again!</p>";
-    
-    document.getElementById("result").innerHTML = resultText;
-}
-
-// Restart quiz function old
-//function restartQuiz() {
-  //document.getElementById("quizForm").reset();
-    //document.getElementById("result").innerHTML = "";
-// Restart Button Logic new
-document.getElementById("restart-btn").addEventListener("click", function () {
-  const inputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
-  inputs.forEach(input => input.checked = false);
-
-  document.querySelectorAll(".feedback").forEach(p => {
-    p.textContent = "";
-    p.style.color = "";
+    restartBtn.style.display = "inline-block";
   });
 
-  document.getElementById("result").textContent = "";
-  document.getElementById("restart-btn").style.display = "none";
+  // === Restart Quiz ===
+  restartBtn.addEventListener("click", function () {
+    // Reset inputs
+    document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach(input => input.checked = false);
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Reset feedback
+    document.querySelectorAll(".feedback").forEach(p => {
+      p.textContent = "";
+      p.style.color = "";
+    });
+
+    // Reset result
+    resultBox.textContent = "";
+    restartBtn.style.display = "none";
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });
-}
+
