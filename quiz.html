@@ -33,28 +33,29 @@
 
   <!-- Question 2 -->
   <div class="question-block" id="q2">
-    <p class="question">2. Which of these are part of technical SEO? (Select all that apply)</p>
-    <input type="checkbox" name="q2" value="A"> A. Site speed<br>
-    <input type="checkbox" name="q2" value="B"> B. Mobile-friendliness<br>
-    <input type="checkbox" name="q2" value="C"> C. Backlinks<br>
+    <p>2. What is the primary goal of a content marketing strategy?</p>
+        <input type="radio" name="q2" value="a"> A. To create as much content as possible<br>
+        <input type="radio" name="q2" value="b"> B. To attract and retain a target audience by providing valuable content<br>
+        <input type="radio" name="q2" value="c"> C. To build backlinks only<br>
     <p class="feedback"></p>
   </div>
   <!-- Question 3 -->
-    <p>3. 3. Which of the following is a primary focus of Technical SEO?</p>
+    <p>3.Which of the following is a primary focus of Technical SEO?</p>
     <input type="radio" name="q3" value="a"> A. Keyword optimization<br>
     <input type="radio" name="q3" value="b"> B. Backlinks and reputation<br>
     <input type="radio" name="q3" value="c"> C. Site speed and mobile friendliness<br>
-
+    <p class="feedback"></p>
     <!-- Question 4 (Fill in the blank) -->
-    <p>4. 4. SEO focuses on optimizing the quality and structure of the content on a webpage, including content quality, keywords, and HTML tags.</p>
+    <p>4.SEO focuses on optimizing the quality and structure of the content on a webpage, including content quality, keywords, and HTML tags.</p>
     <input type="text" id="q4" placeholder="Your answer..."><br>
+    <p class="feedback"></p>
     <!-- Question 5 (Multiple correct answers) -->
-    <p>5. 5. Which of the following are effective link-building strategies? (Select all that apply)</p>
+    <p>5.Which of the following are effective link-building strategies? (Select all that apply)</p>
     <input type="checkbox" name="q5" value="a"> A. Guest blogging<br>
     <input type="checkbox" name="q5" value="b"> B. Keyword stuffing<br>
     <input type="checkbox" name="q5" value="c"> C. Broken link building<br>
     <input type="checkbox" name="q5" value="d"> D. Skyscrapper technique<br>
-
+    <p class="feedback"></p>
   <button id="submit-btn">Submit Quiz</button>
   <p class="result" id="result"></p>
   <button id="restart-btn">Restart Quiz</button>
@@ -78,19 +79,15 @@ document.getElementById("submit-btn").addEventListener("click", function () {
   }
 
   // Question 2
-  const q2Inputs = document.querySelectorAll('input[name="q2"]:checked');
-  const q2Values = Array.from(q2Inputs).map(i => i.value);
-  const q2Feedback = document.querySelector("#q2 .feedback");
-  const correctAnswersQ2 = ["A", "B"];
-  const isCorrect = correctAnswersQ2.every(val => q2Values.includes(val)) && q2Values.length === correctAnswersQ2.length;
-
-  if (q2Values.length > 0 && isCorrect) {
+  const q2 = document.querySelector('input[name="q1"]:checked');
+  const q2Feedback = document.querySelector("#q1 .feedback");
+  if (q1 && q1.value === "B") {
     score++;
-    q2Feedback.textContent = "Correct!";
-    q2Feedback.style.color = "green";
+    q1Feedback.textContent = "Correct!";
+    q1Feedback.style.color = "green";
   } else {
-    q2Feedback.textContent = "Incorrect. Correct answers: A and B.";
-    q2Feedback.style.color = "red";
+    q1Feedback.textContent = "Incorrect. Correct answer: B. To attract and retain a target audience by providing valuable content ";
+    q1Feedback.style.color = "red";
   }
 
   // Show result
