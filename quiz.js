@@ -10,7 +10,7 @@ function submitQuiz() {
     q6: "b",
     q7: "b",
     q8: "a",
-    q9: ["search engine optimization"],
+    q9: ["search engine optimization", "SEO"],
     q10:["a","c","d",],
   };
 
@@ -22,7 +22,7 @@ function submitQuiz() {
   document.querySelectorAll(".feedback-box").forEach(el => el.remove());
 
   // Radio button questions
-  ["q1", "q2", "q5", "q6", "q7", "q8", "q9", "q10"].forEach(q => {
+  ["q1", "q2", "q3","q4", "q5", "q6", "q7", "q8",].forEach(q => {
     const selected = document.querySelector(`input[name="${q}"]:checked`);
     const correctAnswer = answers[q];
 
@@ -44,40 +44,41 @@ function submitQuiz() {
     }
   });
 
-  // Checkbox question (Q3)
-  const q3Selected = Array.from(document.querySelectorAll('input[name="q3"]:checked')).map(cb => cb.value);
-  const correctQ3 = answers.q3.sort().join(",");
-  const selectedQ3 = q3Selected.sort().join(",");
+  // Checkbox question (Q10)
+  
+  const q10Selected = Array.from(document.querySelectorAll('input[name="q10"]:checked')).map(cb => cb.value);
+  const correctQ10 = answers.q10.sort().join(",");
+  const selectedQ10 = q10Selected.sort().join(",");
 
-  document.querySelectorAll('input[name="q3"]').forEach(cb => {
+  document.querySelectorAll('input[name="q10"]').forEach(cb => {
     const label = cb.parentElement;
-    if (answers.q3.includes(cb.value)) {
+    if (answers.q10.includes(cb.value)) {
       label.classList.add("correct");
     }
-    if (cb.checked && !answers.q3.includes(cb.value)) {
+    if (cb.checked && !answers.q10.includes(cb.value)) {
       label.classList.add("incorrect");
     }
   });
 
-  if (correctQ3 === selectedQ3) score++;
+  if (correctQ10 === selectedQ10) score++;
 
-  // Text input (Q4)
-  const q4Input = document.getElementById("q4");
-  const inputVal = q4Input.value.trim().toLowerCase();
-  const q4Wrapper = document.getElementById("q4-wrapper");
+  // Text input (Q9)
+  const q9Input = document.getElementById("q9");
+  const inputVal = q9Input.value.trim().toLowerCase();
+  const q9Wrapper = document.getElementById("q9-wrapper");
 
   // Remove any previous feedback in Q4
-  q4Wrapper.querySelectorAll(".feedback-box").forEach(el => el.remove());
+  q9Wrapper.querySelectorAll(".feedback-box").forEach(el => el.remove());
 
-  if (answers.q4.includes(inputVal)) {
-    q4Input.classList.add("correct");
+  if (answers.q9.includes(inputVal)) {
+    q9Input.classList.add("correct");
     score++;
   } else {
-    q4Input.classList.add("incorrect");
+    q9Input.classList.add("incorrect");
     const feedback = document.createElement("div");
     feedback.classList.add("feedback-box", "correct-box");
-    feedback.textContent = `Correct Answer: ${answers.q4[0]}`;
-    q4Wrapper.appendChild(feedback);
+    feedback.textContent = `Correct Answer: ${answers.q9[0]}`;
+    q9Wrapper.appendChild(feedback);
   }
 
   // Show score
