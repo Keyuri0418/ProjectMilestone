@@ -161,11 +161,13 @@ function submitQuiz() {
 }
 // SUBMIT BUTTON
 function submitButton() {
+  document.getElementById("quizFrom").submit();
+  const quizForm = document.getElementById("quizForm");
+  const quizContainer = document.getElementById("quizContainer");
+  const quizResult = document.getElementById("quizResult");
+  const quizFeedback = document.getElementById("quizFeedback");
+  const quizRestart = document.getElementById("quizRestart");
   const submitBtn = document.getElementById("submitBtn");
-  submitBtn.addEventListener("click", function (event) {
-    event.preventDefault();
-    submitQuiz();
-  });
 }
 
 // Function to restart the quiz
