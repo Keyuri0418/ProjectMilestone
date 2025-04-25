@@ -160,26 +160,3 @@ function submitQuiz() {
   document.getElementById("result").innerHTML = resultText;
 }
 // Submit and Reset buttons
-document.getElementById("quiz-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-  submitQuiz();
-});
-document.getElementById("reset").addEventListener("click", function() {
-  document.getElementById("quiz-form").reset();
-  document.getElementById("result").innerHTML = "";
-  document.querySelectorAll("label").forEach(label => {
-    label.classList.remove("correct", "incorrect", "highlight");
-  });
-  const feedbackBox = document.getElementById("q9-feedback");
-  if (feedbackBox) feedbackBox.remove();
-});
-document.querySelectorAll("input[type='text']").forEach(input => {
-  input.addEventListener("input", function() {
-    this.classList.remove("correct", "incorrect");
-  });
-});
-document.querySelectorAll("input[type='radio'], input[type='checkbox']").forEach(input => {
-  input.addEventListener("change", function() {
-    this.parentElement.classList.remove("correct", "incorrect");
-  });
-});
