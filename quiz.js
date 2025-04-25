@@ -159,41 +159,27 @@ function submitQuiz() {
 
   document.getElementById("result").innerHTML = resultText;
 }
-// Function to submit the quiz
-function submitQuiz() {
-  const resultElement = document.getElementById("result");
-  const answer = document.getElementById("question1").value;
-
-  // Example logic for checking the answer
-  if (answer.toLowerCase() === "correct answer") 
-  {
-      resultElement.innerHTML = "Correct!";
-      resultElement.classList.add("correct");
-      resultElement.classList.remove("incorrect");
-  } 
-  else 
-  {
-      resultElement.innerHTML = "Incorrect. Try again!";
-      resultElement.classList.add("incorrect");
-      resultElement.classList.remove("correct");
-  }
-}
-// Function to restart the quiz
-function restartQuiz() {
-  document.getElementById("quizForm").reset();
-  document.getElementById("result").innerHTML = "";
-  document.querySelectorAll("label, input").forEach(e => {
-      e.classList.remove("correct", "incorrect");
-  });
-}
-
-// Attach event listeners to buttons after the DOM is fully loaded
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("submitButton").addEventListener("click", event => {
-      event.preventDefault(); // Prevent default form submission
-      submitQuiz();
-  });
-
-  document.getElementById("restartButton").addEventListener("click", restartQuiz);
+// Submit and Reset buttons
+document.getElementById("quiz-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  submitQuiz();
 });
-
+document.getElementById("reset").addEventListener("click", function() {
+  document.getElementById("quiz-form").reset();
+  document.getElementById("result").innerHTML = "";
+  document.querySelectorAll("label").forEach(label => {
+    label.classList.remove("correct", "incorrect", "highlight");
+  });
+  const feedbackBox = document.getElementById("q9-feedback");
+  if (feedbackBox) feedbackBox.remove();
+});
+document.querySelectorAll("input[type='text']").forEach(input => {
+  input.addEventListener("input", function() {
+    this.classList.remove("correct", "incorrect");
+  });
+});
+document.querySelectorAll("input[type='radio'], input[type='checkbox']").forEach(input => {
+  input.addEventListener("change", function() {
+    this.parentElement.classList.remove("correct", "incorrect");
+  });
+});
