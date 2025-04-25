@@ -159,46 +159,32 @@ function submitQuiz() {
 
   document.getElementById("result").innerHTML = resultText;
 }
-// SUBMIT BUTTON
-// SUBMIT BUTTON
-function submitButton() {
-  // Call the submitQuiz function directly
-  submitQuiz();
+// Function to submit the quiz
+function submitQuiz() {
+  // Your logic for submitting the quiz goes here
+  // For example, calculate the score and display results
+  const resultElement = document.getElementById("result");
+  resultElement.innerHTML = "Quiz submitted!"; // Placeholder for actual result
 }
 
 // Function to restart the quiz
 function restartQuiz() {
-  // Reset the form
   document.getElementById("quizForm").reset();
   document.getElementById("result").innerHTML = "";
-
-  // Remove all highlights
   document.querySelectorAll("label, input").forEach(e => {
-    e.classList.remove("correct", "incorrect");
+      e.classList.remove("correct", "incorrect");
   });
 
-  // Remove feedback box for Q9 if it exists
   const oldBox = document.getElementById("q9-feedback");
   if (oldBox) oldBox.remove();
 }
 
-// Attach event listeners to buttons
-document.getElementById("submitButton").addEventListener("click", event => {
-  event.preventDefault(); // Prevent default form submission
-  submitQuiz();
+// Attach event listeners to buttons after the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("submitButton").addEventListener("click", event => {
+      event.preventDefault(); // Prevent default form submission
+      submitQuiz();
+  });
+
+  document.getElementById("restartButton").addEventListener("click", restartQuiz);
 });
-
-document.getElementById("restartButton").addEventListener("click", restartQuiz);
-
-// Function to restart the quiz
-
-function restartQuiz() {
-  document.getElementById("quizForm").reset();
-  document.getElementById("result").innerHTML = "";
-  document.querySelectorAll("label, input").forEach(e => {
-    e.classList.remove("correct", "incorrect");
-  });
-
-  const oldBox = document.getElementById("q9-feedback");
-  if (oldBox) oldBox.remove();
-}
