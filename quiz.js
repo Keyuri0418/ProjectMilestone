@@ -167,12 +167,10 @@ function submitButton() {
   const quizResult = document.getElementById("quizResult");
   const quizFeedback = document.getElementById("quizFeedback");
   const quizRestart = document.getElementById("quizRestart");
-  const submitBtn = document.getElementById("submitBtn");
 }
 
 // Function to restart the quiz
-// This function resets the quiz form and clears the result
-// It also removes any feedback boxes and highlights from previous attempts
+
 function restartQuiz() {
   document.getElementById("quizForm").reset();
   document.getElementById("result").innerHTML = "";
