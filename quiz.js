@@ -165,11 +165,14 @@ function submitQuiz() {
   const answer = document.getElementById("question1").value;
 
   // Example logic for checking the answer
-  if (answer.toLowerCase() === "correct answer") {
+  if (answer.toLowerCase() === "correct answer") 
+  {
       resultElement.innerHTML = "Correct!";
       resultElement.classList.add("correct");
       resultElement.classList.remove("incorrect");
-  } else {
+  } 
+  else 
+  {
       resultElement.innerHTML = "Incorrect. Try again!";
       resultElement.classList.add("incorrect");
       resultElement.classList.remove("correct");
