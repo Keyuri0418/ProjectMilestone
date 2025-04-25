@@ -1,17 +1,12 @@
 function submitQuiz() {
   let score = 0;
-  const totalQuestions = 10;
+  const totalQuestions = 5;
   const answers = {
     q1: "a",
     q2: "b",
     q3: "c",
-    q4: ["b"], // New question added
-    q5: "a",
-    q6: "b",
-    q7: "b",
-    q8: "a", 
-    q9: ["on-page", "on page", "onpage"],
-    q10: ["a", "c", "d"],
+    q4: ["on-page", "on page", "onpage"],
+    q5: ["a", "c", "d"]
   };
 
   // Clear old highlights
@@ -51,112 +46,67 @@ function submitQuiz() {
       else score++;
     }
   });
-  // Q4 - New question added
-  const q4Options = document.getElementsByName("q4");
-  q4Options.forEach(opt => {
-    const label = opt.parentElement;
-    if (answers.q4.includes(opt.value)) label.classList.add("correct");
-    if (opt.checked) {
-      if (!answers.q4.includes(opt.value)) label.classList.add("incorrect");
-      else score++;
-    }
-  });
-  // Q5
-  const q5Options = document.getElementsByName("q5");
-  q5Options.forEach(opt => {
-    const label = opt.parentElement;
-    if (opt.value === answers.q5) label.classList.add("correct");
-    if (opt.checked) {
-      if (opt.value !== answers.q5) label.classList.add("incorrect");
-      else score++;
-    }
-  });
-  // Q6
-  const q6Options = document.getElementsByName("q6");
-  q6Options.forEach(opt => {
-    const label = opt.parentElement;
-    if (opt.value === answers.q6) label.classList.add("correct");
-    if (opt.checked) {
-      if (opt.value !== answers.q6) label.classList.add("incorrect");
-      else score++;
-    }
-  });
-  // Q7
-  const q7Options = document.getElementsByName("q7");
-  q7Options.forEach(opt => {
-    const label = opt.parentElement;
-    if (opt.value === answers.q7) label.classList.add("correct");
-    if (opt.checked) {
-      if (opt.value !== answers.q7) label.classList.add("incorrect");
-      else score++;
-    }
-  });
-  // Q8 - Multiple correct  
-  const q8Options = document.getElementsByName("q8");
-  const selectedQ8 = [];
-  q8Options.forEach(opt => {
-    const label = opt.parentElement;
-    if (answers.q8.includes(opt.value)) label.classList.add("correct");
-    if (opt.checked) {
-      selectedQ8.push(opt.value);
-      if (!answers.q8.includes(opt.value)) label.classList.add("incorrect");
-    }
-  });
-  selectedQ8.sort();
-  const correctQ8 = answers.q8.slice().sort();
-  const matchQ8 = JSON.stringify(selectedQ8) === JSON.stringify(correctQ8);
-  if (matchQ8) score++;
 
-  // Q9 - Fill in the blank
-  const q9Input = document.getElementById("q9");
-  const inputVal = q9Input.value.trim().toLowerCase();
-  const q9Container = document.getElementById("q9-wrapper");
-  const correctAnswerQ9 = answers.q9[0];
+  // Q4 - Fill in the blank
+  const q4Input = document.getElementById("q4");
+  const inputVal = q4Input.value.trim().toLowerCase();
+  const q4Container = document.getElementById("q4-wrapper");
+  const correctAnswerQ4 = answers.q4[0];
 
   // Remove previous feedback box if exists
-  const oldBox = document.getElementById("q9-feedback");
+  const oldBox = document.getElementById("q4-feedback");
   if (oldBox) oldBox.remove();
 
   const feedbackBox = document.createElement("div");
-  feedbackBox.id = "q9-feedback";
+  feedbackBox.id = "q4-feedback";
   feedbackBox.classList.add("feedback-box");
 
-  if (answers.q9.includes(inputVal)) {
-    q9Input.classList.add("correct");
+  if (answers.q4.includes(inputVal)) {
+    q4Input.classList.add("correct");
     feedbackBox.classList.add("correct-box");
     feedbackBox.innerHTML = "✔ Correct";
     score++;
   } else {
-    q9Input.classList.add("incorrect");
+    q4Input.classList.add("incorrect");
     feedbackBox.classList.add("incorrect-box");
-    feedbackBox.innerHTML = `✘ Correct: <strong>${correctAnswerQ9}</strong>`;
+    feedbackBox.innerHTML = `✘ Correct: <strong>${correctAnswerQ4}</strong>`;
   }
 
-  q9Container.appendChild(feedbackBox);
+  q4Container.appendChild(feedbackBox);
 
-  // Q10 - Multiple correct
-  const q10Options = document.getElementsByName("q10");
+  // Q5 - Multiple correct
+  const q5Options = document.getElementsByName("q5");
   const selected = [];
-  q10Options.forEach(opt => {
+  q5Options.forEach(opt => {
     const label = opt.parentElement;
-    if (answers.q10.includes(opt.value)) label.classList.add("correct");
+    if (answers.q5.includes(opt.value)) label.classList.add("correct");
     if (opt.checked) {
       selected.push(opt.value);
-      if (!answers.q10.includes(opt.value)) label.classList.add("incorrect");
+      if (!answers.q5.includes(opt.value)) label.classList.add("incorrect");
     }
   });
 
   selected.sort();
-  const correct = answers.q10.slice().sort();
+  const correct = answers.q5.slice().sort();
   const match = JSON.stringify(selected) === JSON.stringify(correct);
   if (match) score++;
 
   // Result
   let resultText = `<p>Your Score: ${score}/${totalQuestions}</p>`;
-  resultText += score >= 5
+  resultText += score >= 3
     ? "<p>✅ You Passed!</p>"
     : "<p>❌ You Failed. Try Again!</p>";
 
   document.getElementById("result").innerHTML = resultText;
 }
-// Submit and Reset buttons
+
+function restartQuiz() {
+  document.getElementById("quizForm").reset();
+  document.getElementById("result").innerHTML = "";
+  document.querySelectorAll("label, input").forEach(e => {
+    e.classList.remove("correct", "incorrect");
+  });
+
+  const oldBox = document.getElementById("q4-feedback");
+  if (oldBox) oldBox.remove();
+}
