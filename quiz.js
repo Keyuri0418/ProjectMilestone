@@ -5,7 +5,7 @@ function submitQuiz() {
     q1: "a",
     q2: "b",
     q3: "c",
-    q4: ["b"] // New question added
+    q4: ["b"], // New question added
     q5: "a",
     q6: "b",
     q7: "b",
