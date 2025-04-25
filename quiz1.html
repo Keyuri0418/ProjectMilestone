@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Example</title>
+    <style>
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="quizForm">
+        <label for="question1">Question 1 (Type "correct answer"):</label>
+        <input type="text" id="question1" name="question1"><br>
+
+        <div id="result"></div>
+        <button type="button" id="submitButton">Submit</button>
+        <button type="button" id="restartButton">Restart</button>
+    </form>
+
+    <script>
+        // Function to submit the quiz
+        function submitQuiz() {
+            const resultElement = document.getElementById("result");
+            const answer = document.getElementById("question1").value;
+
+            // Example logic for checking the answer
+            if (answer.toLowerCase() === "correct answer") {
+                resultElement.innerHTML = "Correct!";
+                resultElement.classList.add("correct");
+                resultElement.classList.remove("incorrect");
+            } else {
+                resultElement.innerHTML = "Incorrect. Try again!";
+                resultElement.classList.add("incorrect");
+                resultElement.classList.remove("correct");
+            }
+        }
+
+        // Function to restart the quiz
+        function restartQuiz() {
+            document.getElementById("quizForm").reset();
+            document.getElementById("result").innerHTML = "";
+            document.querySelectorAll("label, input").forEach(e => {
+                e.classList.remove("correct", "incorrect");
+            });
+        }
+
+        // Attach event listeners to buttons after the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("submitButton").addEventListener("click", event => {
+                event.preventDefault(); // Prevent default form submission
+                submitQuiz();
+            });
+
+            document.getElementById("restartButton").addEventListener("click", restartQuiz);
+        });
+    </script>
+</body>
+</html>
