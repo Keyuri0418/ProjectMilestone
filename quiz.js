@@ -160,14 +160,35 @@ function submitQuiz() {
   document.getElementById("result").innerHTML = resultText;
 }
 // SUBMIT BUTTON
+// SUBMIT BUTTON
 function submitButton() {
-  document.getElementById("quizFrom").submit();
-  const quizForm = document.getElementById("quizForm");
-  const quizContainer = document.getElementById("quizContainer");
-  const quizResult = document.getElementById("quizResult");
-  const quizFeedback = document.getElementById("quizFeedback");
-  const quizRestart = document.getElementById("quizRestart");
+  // Call the submitQuiz function directly
+  submitQuiz();
 }
+
+// Function to restart the quiz
+function restartQuiz() {
+  // Reset the form
+  document.getElementById("quizForm").reset();
+  document.getElementById("result").innerHTML = "";
+
+  // Remove all highlights
+  document.querySelectorAll("label, input").forEach(e => {
+    e.classList.remove("correct", "incorrect");
+  });
+
+  // Remove feedback box for Q9 if it exists
+  const oldBox = document.getElementById("q9-feedback");
+  if (oldBox) oldBox.remove();
+}
+
+// Attach event listeners to buttons
+document.getElementById("submitButton").addEventListener("click", event => {
+  event.preventDefault(); // Prevent default form submission
+  submitQuiz();
+});
+
+document.getElementById("restartButton").addEventListener("click", restartQuiz);
 
 // Function to restart the quiz
 
