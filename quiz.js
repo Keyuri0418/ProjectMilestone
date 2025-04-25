@@ -4,14 +4,14 @@ function submitQuiz() {
   const answers = {
     q1: "a",
     q2: "c",
-    q3: ["a", "c"],
-    q4: ["search engine optimization"],
-    q5: "b",
+    q3: "c",
+    q4: "b",
+    q5: "a",
     q6: "b",
-    q7: "c",
+    q7: "b",
     q8: "a",
-    q9: "a",
-    q10: "d"
+    q9: ["search engine optimization"],
+    q10:["a","c","d",],
   };
 
   // Clear previous styles and feedback
