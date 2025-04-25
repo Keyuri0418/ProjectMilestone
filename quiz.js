@@ -161,12 +161,20 @@ function submitQuiz() {
 }
 // Function to submit the quiz
 function submitQuiz() {
-  // Your logic for submitting the quiz goes here
-  // For example, calculate the score and display results
   const resultElement = document.getElementById("result");
-  resultElement.innerHTML = "Quiz submitted!"; // Placeholder for actual result
-}
+  const answer = document.getElementById("question1").value;
 
+  // Example logic for checking the answer
+  if (answer.toLowerCase() === "correct answer") {
+      resultElement.innerHTML = "Correct!";
+      resultElement.classList.add("correct");
+      resultElement.classList.remove("incorrect");
+  } else {
+      resultElement.innerHTML = "Incorrect. Try again!";
+      resultElement.classList.add("incorrect");
+      resultElement.classList.remove("correct");
+  }
+}
 // Function to restart the quiz
 function restartQuiz() {
   document.getElementById("quizForm").reset();
@@ -174,9 +182,6 @@ function restartQuiz() {
   document.querySelectorAll("label, input").forEach(e => {
       e.classList.remove("correct", "incorrect");
   });
-
-  const oldBox = document.getElementById("q9-feedback");
-  if (oldBox) oldBox.remove();
 }
 
 // Attach event listeners to buttons after the DOM is fully loaded
@@ -188,3 +193,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("restartButton").addEventListener("click", restartQuiz);
 });
+
