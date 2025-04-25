@@ -159,7 +159,18 @@ function submitQuiz() {
 
   document.getElementById("result").innerHTML = resultText;
 }
+// SUBMIT BUTTON
+function submitButton() {
+  const submitBtn = document.getElementById("submitBtn");
+  submitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    submitQuiz();
+  });
+}
 
+// Function to restart the quiz
+// This function resets the quiz form and clears the result
+// It also removes any feedback boxes and highlights from previous attempts
 function restartQuiz() {
   document.getElementById("quizForm").reset();
   document.getElementById("result").innerHTML = "";
