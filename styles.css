@@ -112,6 +112,14 @@ section ul li a {
 section ul li a:hover {
     text-decoration: underline;
 }
+a:hover {
+    color: #ffcc00; /* bright color on hover */
+}
+button:hover {
+    background-color: #004494;
+}
+
+
 
 /* Removed invalid selector `section ul list-style: hover;` */
 
