@@ -359,7 +359,8 @@ label {
         width: 50%; /* Larger images */
     }
 }
-/* ===== Base Navbar Style ===== */
+
+/* ====== Base Navbar Style ====== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -382,6 +383,10 @@ label {
     gap: 20px;
 }
 
+.nav-links li {
+    list-style: none;
+}
+
 .nav-links li a {
     color: white;
     text-decoration: none;
@@ -395,18 +400,41 @@ label {
     transition: background-color 0.3s ease;
 }
 
-/* ===== Hamburger Button Style ===== */
+/* ====== Hamburger Button Style ====== */
 .menu-toggle {
     display: none;
-    font-size: 32px;
-    color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
     cursor: pointer;
 }
 
-/* ===== Mobile Styles ===== */
+.menu-toggle .bar {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+/* Hamburger to X animation */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ====== Mobile Responsive Menu ====== */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Only show hamburger on mobile */
+        display: flex;
     }
 
     .nav-links {
@@ -423,8 +451,20 @@ label {
     }
 
     .nav-links.active {
-        max-height: 500px; /* Enough to show all menu items */
+        max-height: 500px;
         padding: 20px 0;
     }
+}
+/* Animate to X when active */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
