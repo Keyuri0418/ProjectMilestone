@@ -381,6 +381,9 @@ label {
     display: flex;
     list-style: none;
     gap: 20px;
+    justify-content: center; /* center horizontally */
+    align-items: center;
+    flex: 1; /* take space between logo and edge */
 }
 
 .nav-links li {
