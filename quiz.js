@@ -80,9 +80,23 @@
                 feedback.textContent = `Correct Answer: ${answers.q9[0]}`;
                 q9Wrapper.appendChild(feedback);
               }
-            
-              // Show score
-              const result = document.getElementById("result");
-              result.innerHTML = `<h3>Your score: ${score}/10</h3>`;
+              function restartQuiz() {
+                document.getElementById("quizForm").reset();
+                document.querySelectorAll("label, input").forEach(el => {
+                    el.classList.remove("correct", "incorrect");
+                });
+                document.getElementById("result").innerHTML = "";
+                document.querySelectorAll(".feedback-box").forEach(el => el.remove());
+            }
+            const result = document.getElementById("result");
+            let status = (score >= 7) ? "Pass" : "Fail"; // 6/10 or higher is a pass
+            let message = (status === "Pass") ? "🎉 Congratulations! You passed the quiz!" : "❌ Oops! Try again. You can do it!";
+
+            result.innerHTML = `
+            <h3>Your score: ${score}/10 — 
+              <span style="color:${status === 'Pass' ? 'green' : 'red'}">${status}</span>
+            </h3>
+              <p style="font-size: 18px; margin-top: 10px;">${message}</p>
+              `;
             }
             
