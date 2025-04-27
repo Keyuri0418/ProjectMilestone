@@ -25,27 +25,17 @@ nav {
     background-color: #0056b3;
 }
 
-nav ul {
-    list-style: none;
+.navbar {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0056b3;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    display: block;
-}
-
-nav ul li a:hover {
-    background-color: #69b0f6;
-    transition: background-color 0.3s ease;
-}
-
+/* etc. (your correct navbar, nav-links, menu-toggle) */
 section {
     padding: 20px;
     margin: 20px auto;
