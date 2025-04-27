@@ -380,10 +380,6 @@ label {
     display: flex;
     list-style: none;
     gap: 20px;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    overflow: hidden;
-    max-height: 0; /* Initially hidden */
-    padding: 0;
 }
 
 .nav-links li a {
@@ -423,6 +419,7 @@ label {
         padding: 0;
         max-height: 0;
         overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.5s ease;
     }
 
     .nav-links.active {
