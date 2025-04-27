@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Arial", sans-serif;
+    font-family: "Roboto", sans-serif;
     line-height: 1.6;
     background-color: #f9f9f9;
     color: #333;
@@ -19,6 +19,8 @@ header {
     font-size: 1.2rem;
     font-weight: bold;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 nav {
@@ -37,7 +39,7 @@ nav {
 
 /* etc. (your correct navbar, nav-links, menu-toggle) */
 section {
-    padding: 20px;
+    padding: 40px 20px;
     margin: 20px auto;
     background-color: white;
     border-radius: 8px;
@@ -91,7 +93,7 @@ main {
 .details-content {
     display: none;
     padding: 10px;
-    border-left: 3px solid #4399f6;
+    border-left: 3px solid #69b0f6;
     margin-top: 5px;
 }
 
@@ -224,7 +226,6 @@ label {
     border-radius: 6px;
   }
  
-  
   .incorrect {
     background-color: #ffe6e6;
     border-left: 5px solid #dc3545;
