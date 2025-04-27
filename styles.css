@@ -359,7 +359,7 @@ label {
         width: 50%; /* Larger images */
     }
 }
-/* Navbar base style */
+/* ===== Base Navbar Style ===== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -395,7 +395,7 @@ label {
     transition: background-color 0.3s ease;
 }
 
-/* Hamburger hidden on desktop */
+/* ===== Hamburger Button Style ===== */
 .menu-toggle {
     display: none;
     font-size: 32px;
@@ -403,7 +403,7 @@ label {
     cursor: pointer;
 }
 
-/* Mobile Styles */
+/* ===== Mobile Styles ===== */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block; /* Only show hamburger on mobile */
@@ -416,14 +416,15 @@ label {
         top: 60px;
         left: 0;
         width: 100%;
-        padding: 0;
         max-height: 0;
         overflow: hidden;
+        padding: 0;
         transition: max-height 0.5s ease, padding 0.5s ease;
     }
 
     .nav-links.active {
-        max-height: 500px; /* Adjust as needed */
-        padding: 20px 0; /* Add padding when active */
+        max-height: 500px; /* Enough to show all menu items */
+        padding: 20px 0;
     }
 }
+
