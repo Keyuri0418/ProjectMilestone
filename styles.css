@@ -395,7 +395,7 @@ label {
     transition: background-color 0.3s ease;
 }
 
-/* Hamburger menu button */
+/* Hamburger hidden on desktop */
 .menu-toggle {
     display: none;
     font-size: 32px;
@@ -405,23 +405,22 @@ label {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Only show hamburger on mobile */
+    }
+
     .nav-links {
+        display: none;
         flex-direction: column;
         background-color: #0056b3;
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
-        display: none;
         padding: 20px 0;
     }
 
     .nav-links.active {
         display: flex;
     }
-
-    .menu-toggle {
-        display: block;
-    }
 }
-
