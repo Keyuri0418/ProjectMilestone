@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="page1.html">SEO Basics</a></li>
-            <li><a href="page2.html">Advanced SEO Techniques</a></li>
-            <li><a href="quiz.html">Self-Assessment Quiz</a></li>
-            <li><a href="resources.html">References & Resources</a></li>
+    <nav class="navbar"> <!-- For mobile-friendliness -->
+        <div class="logo">MyWebsite</div>
+        <div class="menu-toggle" id="menu-toggle">
+          ☰
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="page1.html">SEO Basics</a></li>
+          <li><a href="page2.html">Advanced SEO</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="resources.html">Resources</a></li>
         </ul>
-    </nav>
-
+      </nav>      <!-- new -->
     <header>
         <h1>Self-Assessment Quiz</h1>
         <p>Test your knowledge of SEO concepts and strategies with this self-assessment quiz.</p>
@@ -114,6 +117,11 @@
     <div id="result"></div>
 
     <script src="quiz.js"></script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+});
 </body>
 </html>
 
