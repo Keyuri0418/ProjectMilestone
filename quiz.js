@@ -1,18 +1,17 @@
 <script>
-        function submitQuiz() {
-            let score = 0;
-
-            const answers = {
-                q1: "a",
-                q2: "c",
-                q3: "c",
-                q4: "b",
-                q5: "a",
-                q6: "b",
-                q7: "b", // Correct answer for question 7
-                q8: "a",
-                q9: ["search engine optimization", "seo"],
-                q10: ["a", "c", "d"],
+    function submitQuiz() {
+      let score = 0;
+        const answers = {
+             q1: "a",
+             q2: "b",
+             q3: "c",
+             q4: "b",
+             q5: "a",
+             q6: "b",
+             q7: "b", 
+             q8: "a",
+             q9: ["search engine optimization", "seo"],
+             q10: ["a", "c", "d"],
             };
 
             // Clear previous styles and feedback
@@ -23,7 +22,7 @@
             document.querySelectorAll(".feedback-box").forEach(el => el.remove());
 
             // Radio button questions
-            ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"].forEach(q => {
+            ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q10"].forEach(q => {
                 const selected = document.querySelector(`input[name="${q}"]:checked`);
                 const correctAnswer = answers[q];
 
