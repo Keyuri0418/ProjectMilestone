@@ -16,89 +16,103 @@
             <li><a href="resources.html">References & Resources</a></li>
         </ul>
     </nav>
+
     <header>
         <h1>Self-Assessment Quiz</h1>
         <p>Test your knowledge of SEO concepts and strategies with this self-assessment quiz.</p>
     </header>
+
     <section>
         <h2>Quiz Overview</h2>
         <p>Please answer the following questions to the best of your ability. Select the correct answer for each question.</p>
         <p>After completing the quiz, click "Submit" to see your results.</p>
-        <p>Each question has multiple choice answers. Select the correct answer(s) for each question.</p>
         <p>Note: Some questions may have more than one correct answer.</p>
-        <p>The quiz consists of the following types of questions:</p>
-        <ul>
-            <li>Single choice (select one answer)</li>
-            <li>Fill in the blank (type your answer)</li>
-            <li>Multiple correct answers (select all that apply)</li>
-        </ul>
     </section> 
+
     <form id="quizForm">
-    <h2>Self-Assesment Quiz</h2>
+    <h2>Self-Assessment Quiz</h2>
+
+    <!-- Question 1 -->
     <p>1. What does SEO stand for?</p>
     <label><input type="radio" name="q1" value="a"> A. Search Engine Optimization</label><br>
     <label><input type="radio" name="q1" value="b"> B. Social Engine Operation</label><br>
-    <label><input type="radio" name="q1" value="c"> C. Site Engagment Optimization</label><br>
+    <label><input type="radio" name="q1" value="c"> C. Site Engagement Optimization</label><br>
     <label><input type="radio" name="q1" value="d"> D. Search Engine Operation</label><br>
 
+    <!-- Question 2 -->
     <p>2. What is the primary goal of a content marketing strategy?</p>
     <label><input type="radio" name="q2" value="a"> A. To create as much content as possible</label><br>
     <label><input type="radio" name="q2" value="b"> B. To attract and retain a target audience by providing valuable content</label><br>
     <label><input type="radio" name="q2" value="c"> C. To build backlinks only</label><br>
     <label><input type="radio" name="q2" value="d"> D. To optimize for search engines only</label><br>
 
+    <!-- Question 3 -->
     <p>3. Which of the following is a primary focus of Technical SEO?</p>
     <label><input type="radio" name="q3" value="a"> A. Keyword optimization</label><br>
     <label><input type="radio" name="q3" value="b"> B. Backlinks and reputation</label><br>
     <label><input type="radio" name="q3" value="c"> C. Site speed and mobile-friendliness</label><br>
     <label><input type="radio" name="q3" value="d"> D. Content quality</label><br>
 
+    <!-- Question 4 (XML Sitemap - notice name is q6) -->
     <p>4. What is the purpose of an XML sitemap?</p>
     <label><input type="radio" name="q6" value="a"> A. To improve website speed</label><br>
     <label><input type="radio" name="q6" value="b"> B. To help search engines crawl and index your site</label><br>
     <label><input type="radio" name="q6" value="c"> C. To create backlinks</label><br>
     <label><input type="radio" name="q6" value="d"> D. To optimize content for keywords</label><br>
 
+    <!-- Question 5 (robots.txt - name is q7) -->
     <p>5. What is the purpose of a robots.txt file?</p>
     <label><input type="radio" name="q7" value="a"> A. To block search engines from crawling specific pages</label><br>
     <label><input type="radio" name="q7" value="b"> B. To improve website speed</label><br>
     <label><input type="radio" name="q7" value="c"> C. To create backlinks</label><br>
     <label><input type="radio" name="q7" value="d"> D. To optimize content for keywords</label><br>
+
+    <!-- Question 6 (structured data markup - name is q8) -->
     <p>6. What is the purpose of structured data markup?</p>
     <label><input type="radio" name="q8" value="a"> A. To improve website speed</label><br>
     <label><input type="radio" name="q8" value="b"> B. To help search engines understand the content of your site</label><br>
     <label><input type="radio" name="q8" value="c"> C. To create backlinks</label><br>
     <label><input type="radio" name="q8" value="d"> D. To optimize content for keywords</label><br>
+
+    <!-- Question 7 (HTTPS - name is q9) -->
     <p>7. What is the purpose of HTTPS?</p>
     <label><input type="radio" name="q9" value="a"> A. To improve website speed</label><br>
     <label><input type="radio" name="q9" value="b"> B. To secure the connection between the user and the website</label><br>
     <label><input type="radio" name="q9" value="c"> C. To create backlinks</label><br>
     <label><input type="radio" name="q9" value="d"> D. To optimize content for keywords</label><br>
+
+    <!-- Question 8 (Google Analytics - name is q10) -->
     <p>8. What is the purpose of Google Analytics?</p>
     <label><input type="radio" name="q10" value="a"> A. To track website traffic and performance</label><br>
     <label><input type="radio" name="q10" value="b"> B. To create backlinks</label><br>
     <label><input type="radio" name="q10" value="c"> C. To optimize content for keywords</label><br>
     <label><input type="radio" name="q10" value="d"> D. To improve website speed</label><br>
 
-    <p>9.___ focuses on optimizing the quality and structure of the content on a webpage, including content quality, keywords, and HTML tags.</p>
-  <br>
+    <!-- Question 9 (Fill in the blank - input field id and name is q4) -->
+    <p>9. ___ focuses on optimizing the quality and structure of the content on a webpage, including content quality, keywords, and HTML tags.</p>
     <div id="q4-wrapper">
-        <input type="text" id="q9" name="q9" placeholder="Your answer here">
+      <input type="text" id="q4" name="q4" placeholder="Your answer here">
     </div>
     <br>
 
+    <!-- Question 10 (checkbox multiple answers) -->
     <p>10. Which of the following are effective link-building strategies? (Select all that apply)</p>
-    <label><input type="checkbox" name="q5" value="a"> A. Guest blogging</label><br>
-    <label><input type="checkbox" name="q5" value="b"> B. Keyword stuffing</label><br>
-    <label><input type="checkbox" name="q5" value="c"> C. Broken link building</label><br>
-    <label><input type="checkbox" name="q5" value="d"> D. Skyscraper technique</label><br>
-    
+    <label><input type="checkbox" name="q10" value="a"> A. Guest blogging</label><br>
+    <label><input type="checkbox" name="q10" value="b"> B. Keyword stuffing</label><br>
+    <label><input type="checkbox" name="q10" value="c"> C. Broken link building</label><br>
+    <label><input type="checkbox" name="q10" value="d"> D. Skyscraper technique</label><br>
+
+    <br>
+
+    <!-- Buttons -->
     <button type="button" onclick="submitQuiz()">Submit</button>
     <button type="button" onclick="restartQuiz()">Restart</button>
-  </form>
+    </form>
 
-
+    <!-- Result Output -->
     <div id="result"></div>
-   <script src="quiz.js"></script>
+
+    <script src="quiz.js"></script>
 </body>
 </html>
+
