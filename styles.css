@@ -39,7 +39,7 @@ nav {
 
 /* etc. (your correct navbar, nav-links, menu-toggle) */
 section {
-    padding: 40px 20px;
+    padding: 20px;
     margin: 20px auto;
     background-color: white;
     border-radius: 8px;
@@ -118,9 +118,6 @@ a:hover {
 button:hover {
     background-color: #004494;
 }
-
-
-
 /* Removed invalid selector `section ul list-style: hover;` */
 
 .quiz-container {
