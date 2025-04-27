@@ -8,7 +8,6 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">MyWebsite</div>
         <div class="menu-toggle" id="menu-toggle">
           ☰
         </div>
@@ -121,7 +120,15 @@
         <h4>Conclusion</h4>
         <p>Advanced SEO techniques are essential for improving your website's visibility and ranking on search engines. By implementing a solid content marketing strategy, building high-quality backlinks, and optimizing your site for technical SEO, you can enhance your online presence and drive more organic traffic to your site.</p>
     </section>
-
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        </script>
+        
 </body>
 </html>
 

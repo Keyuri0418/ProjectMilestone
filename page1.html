@@ -8,7 +8,6 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">MyWebsite</div>
         <div class="menu-toggle" id="menu-toggle">
           ☰
         </div>
@@ -97,5 +96,14 @@
         <h2>Conclusion</h2>
         <p>Understanding the basics of SEO is essential for improving your website's visibility and ranking on search engines. By focusing on on-page, off-page, and technical SEO, you can create a solid foundation for your online presence.</p>
     </section>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        </script>
+        
 </body>
 </html>
