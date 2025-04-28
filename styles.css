@@ -111,16 +111,13 @@ main {
 
 .seo-topic strong {
     font-size: 18px;
-    color: #0056b3;
+    color: #0b0c0d;
 }
 
 .seo-topic p {
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 1.5;
-}
-p {
-    margin: 15px 0;
 }
 
 section ul li a {
