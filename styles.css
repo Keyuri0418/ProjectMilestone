@@ -115,7 +115,7 @@ section ul li a:hover {
     text-decoration: underline;
 }
 a:hover {
-    color: #ffcc00; /* bright color on hover */
+    color: #0693e3; /* bright color on hover */
 }
 button:hover {
     background-color: #004494;
