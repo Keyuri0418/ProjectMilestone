@@ -83,7 +83,7 @@ main {
 .container {
     background-color: white; /* inside is white */
     max-width: 1000px; /* box not full screen */
-    margin: 40px 20px; /* space around and center it */
+    margin: 20px; /* space around  */
     padding: 30px; /* space inside the box */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* soft shadow */
     border-radius: 10px; /* optional: rounded corners */
